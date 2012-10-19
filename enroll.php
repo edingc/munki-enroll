@@ -7,10 +7,10 @@ $identifier = $_GET["identifier"];
 $hostname   = $_GET["hostname"];
 
 // Split the manifest path up to determine directory structure
-$directories     = explode( "/", $identifier, -1 ); 
-$total			 = count( $directories );
-$n               = 0;
-$identifier_path = "";
+$directories		= explode( "/", $identifier, -1 ); 
+$total				= count( $directories );
+$n					= 0;
+$identifier_path	= "";
 while ( $n < $total )
     {
         $identifier_path .= $directories[$n] . '/';
