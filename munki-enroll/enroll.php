@@ -1,6 +1,7 @@
 <?php
+namespace CFPropertyList;
 
-require_once( 'cfpropertylist-1.1.2/CFPropertyList.php' );
+require_once( 'cfpropertylist-2.0.1/CFPropertyList.php' );
 
 // Get the varibles passed by the enroll script
 $identifier = $_GET["identifier"];
