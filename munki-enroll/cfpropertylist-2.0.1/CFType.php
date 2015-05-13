@@ -8,6 +8,8 @@
  * @subpackage plist.types
  * @version $Id$
  */
+namespace CFPropertyList;
+use \DOMDocument, \Iterator, \ArrayAccess;
 
 /**
  * Base-Class of all CFTypes used by CFPropertyList
@@ -67,8 +69,8 @@ abstract class CFType {
    * @uses $value as nodeValue
    */
   public function toXML(DOMDocument $doc, $nodeName) {
-    $text = $doc->createTextNode($this->value);
     $node = $doc->createElement($nodeName);
+    $text = $doc->createTextNode($this->value);
     $node->appendChild($text);
     return $node;
   }
@@ -116,6 +118,19 @@ class CFString extends CFType {
    */
   public function toBinary(CFBinaryPropertyList &$bplist) {
     return $bplist->stringToBinary($this->value);
+  }
+}
+
+class CFUid extends CFType {
+  public
+  function toXML(DOMDocument $doc,$nodeName="") {
+    $obj = new CFDictionary(array('CF$UID' => new CFNumber($this->value)));
+    return $obj->toXml($doc);
+  }
+
+  public
+  function toBinary(CFBinaryPropertyList &$bplist) {
+    return $bplist->uidToBinary($this->value);
   }
 }
 
