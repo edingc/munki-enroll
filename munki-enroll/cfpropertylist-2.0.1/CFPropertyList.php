@@ -395,7 +395,7 @@ class CFPropertyList extends CFBinaryPropertyList implements Iterator {
    * @param bool $formatted Print plist formatted (i.e. with newlines and whitespace indention) if true; defaults to false
    * @return string The XML content
    */
-  public function toXML($formatted=false) {
+  public function toXML($formatted=true) {
     $domimpl = new DOMImplementation();
     // <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     $dtd = $domimpl->createDocumentType('plist', '-//Apple//DTD PLIST 1.0//EN', 'http://www.apple.com/DTDs/PropertyList-1.0.dtd');
