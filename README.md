@@ -20,6 +20,29 @@ Copy the "munki-enroll" folder to the root of your Munki repository (the same di
 
 That's it! Be sure to make note of the full URL path to the enroll.php file.
 
+## Example manifest organization
+
+A simple example of manifest organization in Munki Enroll is shown below:
+
+    . /manifests
+    ├── default (Software for all computers goes here.)
+    ├── locationA
+    │   ├── A_default (Software for locationA computers goes here. Includes default manifest.)
+    │   └── clients
+    │       └── computer1 (Software for computer1 goes here. Includes A_default manifest, which includes default manifest.)
+    └── locationB
+        ├── B_default (Software for locationB computers goes here. Includes default manifest.)
+        └── clients
+            └── computer2 (Software for computer2 goes here. Includes A_default manifest, which includes default manifest.)
+
+The default, A_default, and B_default manifests would be manually created. Computer1 would be provisioned with its ClientIdentifier set to locationA/A_default. Munki Enroll would then be run on the computer to generate the computer1 manifest in the clients folder under locationA. The computer1 manifest contains the A_default manifest, which contains the default manifest.
+
+### Deploying packages
+
+The default manifest might contain web browsers or other applications needed on all computers. The A_default manifest would contain location-specific packages, while the computer1 manifest would contain computer-specific packages.
+
+This organization makes it extremely easy to target a bunch of computers or only one depending on needs.
+
 ## Client Configuration
 
 Edit the included munki_enroll.sh script to include the full URL path to the enroll.php file on your Munki repository.
