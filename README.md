@@ -35,7 +35,7 @@ A simple example of manifest organization in Munki Enroll is shown below:
         └── clients
             └── computer2 (Software for computer2 goes here. Includes A_default manifest, which includes default manifest.)
 
-The default, A_default, and B_default manifests would be manually created. Computer1 would be provisioned with its ClientIdentifier set to locationA/A_default. Munki Enroll would then be run on the computer to generate the computer1 manifest in the clients folder under locationA. The computer1 manifest contains the A_default manifest, which contains the default manifest.
+The `default`, `A_default`, and `B_default` manifests would be manually created. Computer1 would be provisioned with its ClientIdentifier set to `locationA/A_default`. Munki Enroll would then be run on the computer to generate the `computer1` manifest in the clients folder under locationA. The computer1 manifest contains the A_default manifest, which contains the default manifest.
 
 ### Deploying packages
 
