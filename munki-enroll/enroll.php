@@ -32,13 +32,20 @@ else
                 mkdir( '../manifests/' . $identifier_path . 'clients/', 0755, true );
             }
         
+        // Get the catalog(s) from the old manifest
+         $plistold = new CFPropertyList( '../manifests/' . $identifier_path . '/' . $identifier );
+         $plistold_array=$plistold->toArray();
+         $old_catalogs=$plistold_array['catalogs'];
+
         // Create the new manifest plist
         $plist = new CFPropertyList();
         $plist->add( $dict = new CFDictionary() );
         
         // Add manifest to production catalog by default
         $dict->add( 'catalogs', $array = new CFArray() );
-        $array->add( new CFString( 'production' ) );
+        foreach($old_catalogs AS $old_catalog){
+            $array->add( new CFString( $old_catalog ) );
+        }
         
         // Add parent manifest to included_manifests to achieve waterfall effect
         $dict->add( 'included_manifests', $array = new CFArray() );
