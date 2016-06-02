@@ -2,7 +2,9 @@
 
 # Gather computer information
 IDENTIFIER=$( defaults read /Library/Preferences/ManagedInstalls ClientIdentifier ); 
-HOSTNAME=$( scutil --get ComputerName );
+HOSTNAMETEMP=$( scutil --get ComputerName );
+# Subs in underscores for spaces in the HOSTNAME
+HOSTNAME=${HOSTNAMETEMP// /_}
 
 # Change this URL to the location fo your Munki Enroll install
 SUBMITURL="http://localhost:8888/munki/munki-enroll/enroll.php"
