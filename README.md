@@ -53,7 +53,7 @@ The included munki_enroll.sh script can be executed in any number of ways (Termi
 
 ## Caveats
 
-Currently, Munki Enroll lacks any kind of error checking. It works perfectly fine in my environment without it. Your mileage may vary.
+Munki Enroll originally lacked error checking. Thanks to some generous code contributions, it now has some error checking. It worked fine without checking in my environment, but your mileage may vary.
 
 Your web server must have access to write to your Munki repository. I suggest combining SSL and Basic Authentication (you're doing this anyway, right?) on your Munki repository to help keep nefarious things out. To do this, edit the CURL command in munki_enroll.sh to include the following flag:
 
