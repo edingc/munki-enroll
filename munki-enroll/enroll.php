@@ -33,7 +33,7 @@ else
             }
         
         // Get the catalog(s) from the old manifest
-         $plistold = new CFPropertyList( '../manifests/' . $identifier_path . '/' . $identifier );
+         $plistold = new CFPropertyList( '../manifests/' . $identifier );
          $plistold_array=$plistold->toArray();
          $old_catalogs=$plistold_array['catalogs'];
 
