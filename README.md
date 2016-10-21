@@ -21,11 +21,13 @@ Copy the "munki-enroll" folder to the root of your Munki repository (the same di
 Ensure your webserver owns and can write to the Munki repository (this may vary a litte based on your environment):
 
 `chmod -R a+rX,g+w /var/www/html/munki_repo`
+
 `chown -R apache:apache /var/www/html/munki_repo`
 
 Some Linux distributions do not include `php-xml` in the default PHP install. Install using the package manager of your chosen distribution, for example:
 
 `apt-get install php-xml`
+
 `yum install php-xml`
 
 That's it! Be sure to make note of the full URL path to the enroll.php file.
