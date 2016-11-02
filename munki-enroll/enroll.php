@@ -72,7 +72,7 @@ if (file_exists($munki_dir . '/manifests/' . $identifier_path . 'clients/' . $ho
     
     // Save the newly created plist
     $plistnew = $munki_dir . '/manifests/' . $identifier_path . 'clients/' . $hostname;
-    echo "Writing new plist to " . $plistnew . PHP_EOL;
+    echo "Writing new plist: " . $plistnew . PHP_EOL;
     $plist->saveXML($plistnew);
     
 }
