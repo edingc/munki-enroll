@@ -69,7 +69,7 @@ Munki Enroll originally lacked error checking. Thanks to some generous code cont
 
 Your web server must have access to write to your Munki repository. I suggest combining SSL and Basic Authentication (you're doing this anyway, right?) on your Munki repository to help keep nefarious things out. To do this, edit the CURL command in munki_enroll.sh to include the following flag:
 
-	--user "USERNAME:PASSWORD;" 
+	--user "USERNAME:PASSWORD" 
 
 ## License
 
