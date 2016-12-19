@@ -6,7 +6,7 @@ HOSTNAMETEMP=$( scutil --get ComputerName );
 # Subs in underscores for spaces in the HOSTNAME
 HOSTNAME=${HOSTNAMETEMP// /_}
 
-# Change this URL to the location fo your Munki Enroll install
+# Change this URL to the location for your Munki Enroll install
 SUBMITURL="http://localhost:8888/munki/munki-enroll/enroll.php"
 
 # Test the connection to the server
