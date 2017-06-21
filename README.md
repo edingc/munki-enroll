@@ -67,7 +67,7 @@ The included munki_enroll.sh script can be executed in any number of ways (Termi
 
 Munki Enroll originally lacked error checking. Thanks to some generous code contributions, it now has some error checking. It worked fine without checking in my environment, but your mileage may vary.
 
-*It is required that the Munki client have a ClientIdentifier set before running the munki_enroll.sh script.* If you do not have a default manifest specified, munki-enroll will fail to create your specific manifest.
+**It is required that the Munki client have a ClientIdentifier set before running the munki_enroll.sh script.** If you do not have a default manifest specified, munki-enroll will fail to create your specific manifest.
 
 Your web server must have access to write to your Munki repository. I suggest combining SSL and Basic Authentication (you're doing this anyway, right?) on your Munki repository to help keep nefarious things out. To do this, edit the CURL command in munki_enroll.sh to include the following flag:
 
