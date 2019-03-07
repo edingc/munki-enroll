@@ -12,7 +12,7 @@ if [ ! -z "$IDENTIFIER" ]; then
 	SUBMITURL="http://localhost:8888/munki/munki-enroll/enroll.php"
 
 	# Test the connection to the server
-	SHORTURL=$(echo "$SUBMITURL" | awk -F/ '{print $3}')
+	SHORTURL=$(echo "$SUBMITURL" | awk -F/ '{print $3}' | awk -F: '{print $1}')
 	PINGTEST=$(ping -o "$SHORTURL" | grep "64 bytes")
 
 	if [ ! -z "$PINGTEST" ]; then
