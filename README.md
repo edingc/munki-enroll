@@ -18,7 +18,7 @@ Munki Enroll requires PHP version 5.3 or higher to be working on the webserver h
 
 Copy the "munki-enroll" folder to the root of your Munki repository (the same directory as pkgs, pkginfo, manifests and catalogs). 
 
-Ensure your webserver owns and can write to the Munki repository (this may vary a litte based on your environment):
+Ensure your webserver owns and can write to the Munki repository (this may vary a little based on your environment):
 
 `chmod -R a+rX,g+w /var/www/html/munki_repo`
 
